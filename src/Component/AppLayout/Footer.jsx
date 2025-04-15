@@ -11,15 +11,15 @@ const Footer = () => {
           {/* Services */}
           <div>
             <h2 className='font-semibold text-lg mb-5 text-white'>Our Treats</h2>
-            <ul className='space-y-3'>
+            <ul className=''>
               <Link to='/product/confectionaries'>
-              <li className='text-sm text-gray-400 hover:text-white'>Custom Cakes</li>
+              <li className='text-sm text-gray-400 hover:text-white mb-2'>Custom Cakes</li>
               </Link>
               <Link to='/product/confectionaries'>
-              <li className='text-sm text-gray-400 hover:text-white'>Fresh Pastries</li>
+              <li className='text-sm text-gray-400 hover:text-white mb-2'>Fresh Pastries</li>
               </Link>
               <Link to='/product/confectionaries'>
-              <li className='text-sm text-gray-400 hover:text-white'>Crunchy Cookies</li>
+              <li className='text-sm text-gray-400 hover:text-white mb-2'>Crunchy Cookies</li>
               </Link>
               <Link to='/product/confectionaries'>
               <li className='text-sm text-gray-400 hover:text-white'>Seasonal Specials</li>
@@ -32,9 +32,8 @@ const Footer = () => {
             <h2 className='font-semibold text-lg mb-5 text-white'>BakerzBite</h2>
             <ul className='space-y-3'>
               <Link to='/about'>
-              <li className='text-sm text-gray-400 hover:text-white'>About Us</li>
+                <li className='text-sm text-gray-400 hover:text-white'>About Us</li>
               </Link>
-              <li className='text-sm text-gray-400 hover:text-white'>About Us</li>
               <li className='text-sm text-gray-400 hover:text-white'>Our Bakers</li>
               <li className='text-sm text-gray-400 hover:text-white'>Testimonials</li>
               <li className='text-sm text-gray-400 hover:text-white'>FAQ</li>

@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 const Hero = () => {
   return (
     <section >
-        <div className="relative max-w-[90%] ml-auto flex h-[60vh]">
+        <div className="relative md:max-w-[90%] ml-auto flex md:flex-row flex-col-reverse md:h-[60vh]">
             {/* ✨ Text Content */}
-            <div className="w-1/3 z-10 flex flex-col justify-center space-y-5 px-6">
+            <div className="md:w-1/3 z-10 flex flex-col mt-8 md:mt-0 justify-center  space-y-5 px-6">
                 <h3 className="text-md font-semibold text-primary-light tracking-wide uppercase">
                 Freshly Baked For You
                 </h3>
@@ -20,7 +20,7 @@ const Hero = () => {
 
                 <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0 pt-2">
                     <Link to='/product/confectionaries'>
-                        <button className="bg-primary-light text-white px-5 py-2 rounded-full hover:bg-primary-dark transition duration-300">
+                        <button className="bg-primary-light text-white w-full md:w-fit px-5 py-2 rounded-full hover:bg-primary-dark transition duration-300">
                         Explore Menu
                         </button>
                     </Link>
@@ -38,7 +38,7 @@ const Hero = () => {
             </div>
 
             {/* 📸 Image Side */}
-            <div className="w-2/3 h-full relative">
+            <div className="md:w-2/3 h-full relative">
                 <img
                 src="/images/BakeHome2.jpg"
                 alt="Hero Image"

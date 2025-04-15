@@ -165,14 +165,18 @@ const NavBar = () => {
                         ))}
                     
                         <div className="pt-4 flex flex-col space-y-3">
+                        <Link to="/cart">
+                            <ShoppingCart className="w-6 h-6 text-darkPurple" />
+                            {cartItems.length > 0 && (
+                                <span className="absolute -top-2 -right-2 text-xs bg-red-500 text-white px-1.5 py-0.5 rounded-full">
+                                {cartItems.length}
+                            </span>
+                            )}
+                            </Link>
+
                             <div className="flex items-center space-x-2">
                             <Phone className="text-darkPurple" size={18} />
                             <a href="https://wa.me/2349128721745" className="text-sm">+234 912 872 1745</a>
-                            </div>
-                            
-                            <div className="flex items-center space-x-2">
-                            <MapPin className="text-darkPurple" size={18} />
-                            <p className="text-sm">Cypress, TX 77429</p>
                             </div>
                         </div>
                     </div>

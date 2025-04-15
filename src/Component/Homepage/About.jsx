@@ -7,7 +7,7 @@ const About = () => {
         <h2 className='text-center text-4xl font-bold'>About Us</h2>
         <div className='flex flex-col md:flex-row gap-8 mt-10'>
             {/* First Section: Image first, then text */}
-            <div className='w-1/2 space-y-8'>
+            <div className='md:w-1/2 space-y-8'>
                 <img src="images/BakeHome.jpg" alt="" className='rounded-xl object-cover w-full h-64' />
                 <div className='w-full'>
                     <h3 className="text-2xl font-semibold text-primary-light">Our Mission</h3>
@@ -21,7 +21,7 @@ const About = () => {
             </div>
 
             {/* Second Section: Text first, then image */}
-            <div className='w-1/2 space-y-8'>
+            <div className='md:w-1/2 space-y-8'>
                 <div className='space-y-4'>
                     <h3 className="text-2xl font-semibold text-primary-light">Our Story</h3>
                     <p className="text-md text-gray-600">

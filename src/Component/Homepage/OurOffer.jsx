@@ -17,10 +17,10 @@ const OurOffer = () => {
 
             {/* 📝 Centered Content */}
             <div className="absolute inset-0 flex flex-col justify-center items-center space-y-6 text-center px-6">
-                <h2 className="text-4xl font-bold text-primary-light uppercase tracking-wide">
+                <h2 className="md:text-4xl text-2xl font-bold text-primary-light uppercase tracking-wide">
                     What We Offer
                 </h2>
-                <p className="max-w-2xl text-lg text-secondary-light">
+                <p className="max-w-2xl text-sm md:text-lg text-secondary-light">
                     Discover a delightful collection of artisanal treats and handcrafted merchandise designed to elevate every moment. From mouth-watering baked goods to stylish, functional keepsakes — we bring quality, creativity, and care in every product.
                 </p>
                 <div className="mt-4">
