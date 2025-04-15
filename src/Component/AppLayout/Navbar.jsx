@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
-import { Menu, X, MapPin, Phone, Clock, Lock, GraduationCap, Cake } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { Menu, X, MapPin, Phone, ShoppingCart, Heart, Cake } from "lucide-react";
+import { Link, NavLink } from "react-router-dom";
 import Ticker from "../Ticker";
+import { useCart } from "@/context/CartContext";
 
 const NavBar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  
+  const { cartItems } = useCart();
+
   // Handle navbar background change on scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -100,28 +102,35 @@ const NavBar = () => {
                     
                     {/* Contact & Address - Desktop */}
                     <div className="hidden lg:flex items-center space-x-6">
-                    <div className="flex items-center space-x-2">
-                        <Phone className="text-primary" size={20} />
-                        <div>
-                        <p className="text-xs text-customDark">Contact Us</p>
-                        <a 
-                            href="https://wa.me/2349128721745" 
-                            target="_blank" 
+                    <div className="flex items-center space-x-6 text-sm">
+                        <Link to="/cart">
+                        <ShoppingCart className="w-6 h-6 text-darkPurple" />
+                        {cartItems.length > 0 && (
+                            <span className="absolute -top-2 -right-2 text-xs bg-red-500 text-white px-1.5 py-0.5 rounded-full">
+                            {cartItems.length}
+                            </span>
+                        )}
+                        </Link>
+
+                        {/* Wishlist */}
+                        <div className="flex items-center space-x-2 cursor-pointer hover:text-primary">
+                            <Heart size={20} className="text-pink-500" />
+                            <span>Wishlist</span>
+                        </div>
+
+                        {/* Contact Us */}
+                        <div className="flex items-center space-x-2">
+                            <Phone size={20} className="text-primary" />
+                            <a
+                            href="https://wa.me/2349128721745"
+                            target="_blank"
                             rel="noopener noreferrer"
-                            className="text-sm font-medium hover:text-primary"
-                        >
+                            className="hover:text-primary font-medium"
+                            >
                             +234 912 872 1745
-                        </a>
+                            </a>
                         </div>
-                    </div>
-                    
-                    <div className="flex items-center space-x-2">
-                        <MapPin className="text-primary" size={20} />
-                        <div>
-                        <p className="text-xs text-customDark">Our Address</p>
-                        <p className="text-xs">Cypress, TX 77429</p>
                         </div>
-                    </div>
                     </div>
                     
                     {/* Mobile menu button */}

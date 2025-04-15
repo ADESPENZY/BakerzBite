@@ -6,16 +6,20 @@ import merchItems from '../Data/merchitems'
 import BakerzCard from './BakerzCard'
 import ProductModal from '../Component/ProductModal'
 import { toast } from 'react-toastify';
+import { useCart } from '@/context/CartContext'
 
 const Merchandize = () => {
     const [activeCategory, setActiveCategory] = useState('All')
     const [searchTerm, setSearchTerm] = useState('')
-    const [selectedProduct, setSelectedProduct] = useState(null); // 👈
+    const [selectedProduct, setSelectedProduct] = useState(null); 
+    const { addToCart } = useCart();
+    
   
     const categories = ['All', 'Aprons', 'Tote Bags', 'Mugs', 'T-Shirts', 'Baking Tools', 'Gift Sets']
   
-    const handleAddToCart = () => {
-      toast.success('Item added to cart!');
+     const handleAddToCart = (product) => {
+        addToCart(product);
+        toast.success('Item added to cart!');
     };
   
     let filteredData = merchItems
@@ -36,7 +40,7 @@ const Merchandize = () => {
       {/* Banner */}
       <div className="relative">
         <img
-          src="/images/merchBanner.jpg"
+          src="/images/apron3.jpg"
           alt="Merchandise Banner"
           className="w-full h-[60vh] object-cover"
         />
@@ -127,7 +131,7 @@ const Merchandize = () => {
         isOpen={!!selectedProduct}
         onClose={() => setSelectedProduct(null)}
         product={selectedProduct}
-        onAddToCart={handleAddToCart}
+        onAddToCart={() => handleAddToCart(selectedProduct)}
       />
     </div>
   )

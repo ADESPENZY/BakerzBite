@@ -4,7 +4,7 @@ import AboutCard from '../Data/AboutCard.json'
 
 const About = () => {
   return (
-    <section className='font-montserrat'>
+    <section className='font-body'>
       <div className="relative">
         {/* 📸 Background Image */}
         <img

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const About = () => {
   return (
@@ -34,9 +35,12 @@ const About = () => {
             </div>
         </div>
         <div className='text-center mt-10'>
-            <button className="px-6 py-2 mt-4 bg-primary-light text-white rounded-full hover:bg-primary-dark transition">
-                Learn More About Us
-            </button>
+            <Link to='/about'>
+                <button className="px-6 py-2 mt-4 bg-primary-light text-white rounded-full hover:bg-primary-dark transition">
+                    Learn More About Us
+                </button>
+            </Link>
+            
         </div>        
     </section>
   )

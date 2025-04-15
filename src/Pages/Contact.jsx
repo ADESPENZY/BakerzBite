@@ -38,7 +38,7 @@ const Contact = () => {
         {/* Background Banner */}
         <div className="relative w-full h-[40vh] overflow-hidden">
           <img
-            src="/images/bakery-banner.jpg"
+            src="/images/cake9.jpg"
             alt="Bakery Banner"
             className="w-full h-full object-cover"
             style={{ clipPath: 'polygon(0 0, 100% 0, 100% 80%, 0 100%)' }}

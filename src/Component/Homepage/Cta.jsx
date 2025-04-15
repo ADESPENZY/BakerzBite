@@ -10,7 +10,7 @@ const Cta = () => {
           Treat Yourself to Our Irresistible Cookies & Cakes
         </h1>
         <div className='flex flex-col md:flex-row gap-5 md:items-center'>
-          <Link to='/shop'>
+          <Link to='/custom-order'>
             <button className='bg-primary-light text-xl w-full md:w-fit font-medium px-5 py-3 rounded hover:bg-primary-dark'>
               Explore Our Menu
             </button>

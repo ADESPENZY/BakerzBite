@@ -4,11 +4,13 @@ import bakerzItems from '../Data/bakerzData'
 import BakerzCard from './BakerzCard'
 import ProductModal from '../Component/ProductModal'
 import { toast } from 'react-toastify';
+import { useCart } from '@/context/CartContext'
 
 const Confectionaries = () => {
     const [activeCategory, setActiveCategory] = useState('All');
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedProduct, setSelectedProduct] = useState(null); // 👈 for modal
+    const { addToCart } = useCart();
   
     const categories = ['All', 'Cakes', 'Pastries', 'Bread', 'Drinks', 'Snacks', 'Special Orders'];
   
@@ -24,9 +26,10 @@ const Confectionaries = () => {
       filteredData = filteredData.slice(0, 9);
     }
   
-    const handleAddToCart = () => {
-        toast.success('Item added to cart!');
-      };
+    const handleAddToCart = (product) => {
+      addToCart(product);
+      toast.success('Item added to cart!');
+    };
 
   return (
     <div className="font-body pb-16">
@@ -106,6 +109,7 @@ const Confectionaries = () => {
               image={item.image}
               title={item.title}
               description={item.description}
+              price={item.price}
               onViewMore={() => setSelectedProduct(item)} // 👈 pass modal handler
             />
           ))}
@@ -124,7 +128,7 @@ const Confectionaries = () => {
         isOpen={!!selectedProduct}
         onClose={() => setSelectedProduct(null)}
         product={selectedProduct}
-        onAddToCart={handleAddToCart}
+        onAddToCart={() => handleAddToCart(selectedProduct)}
       />
     </div>
   )

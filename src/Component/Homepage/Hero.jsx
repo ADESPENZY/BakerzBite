@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
   return (
@@ -17,14 +18,23 @@ const Hero = () => {
                 warm pastries, crunchy cookies, and divine cakes — baked fresh, every single day.
                 </p>
 
-                <div className="flex space-x-4 pt-2">
-                <button className="bg-primary-light text-white px-5 py-2 rounded-full hover:bg-primary-dark transition duration-300">
-                    Explore Menu
-                </button>
-                <button className="border border-primary-light text-primary-light px-5 py-2 rounded-full hover:bg-primary-light hover:text-white transition duration-300">
-                    Order Now
-                </button>
+                <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0 pt-2">
+                    <Link to='/product/confectionaries'>
+                        <button className="bg-primary-light text-white px-5 py-2 rounded-full hover:bg-primary-dark transition duration-300">
+                        Explore Menu
+                        </button>
+                    </Link>
+
+                    <a
+                        href="https://calendly.com/atoyebijoshua095?hide_gdpr_banner=1"
+                        className="bg-primary-light lg:w-fit w-full text-white px-5 py-2 rounded-full font-semibold hover:bg-primary-dark hover:border-none hover:text-white text-center"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Book A Tasting
+                    </a>
                 </div>
+
             </div>
 
             {/* 📸 Image Side */}
