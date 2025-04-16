@@ -113,6 +113,7 @@ const Merchandize = () => {
               image={item.image}
               title={item.title}
               description={item.description}
+              price={item.price}
               onViewMore={() => setSelectedProduct(item)} // 👈 modal trigger
             />
           ))}

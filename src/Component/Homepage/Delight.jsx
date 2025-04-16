@@ -3,10 +3,12 @@ import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import BakerzCard from '@/Pages/BakerzCard'
 import ProductModal from '../ProductModal'
+import { useCart } from '@/context/CartContext'
 
 const Delight = () => {
   const [selectedProduct, setSelectedProduct] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const { addToCart } = useCart()
 
   const openModal = (product) => {
     setSelectedProduct(product)
@@ -19,6 +21,7 @@ const Delight = () => {
   }
 
   const handleAddToCart = () => {
+    addToCart(selectedProduct)
     toast.success(`${selectedProduct.title} added to cart! 🛒`, {
       position: 'top-right',
       autoClose: 2000,

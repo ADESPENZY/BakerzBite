@@ -1,5 +1,6 @@
 import React from 'react'
 import { Truck, Undo2, Headset, Lock } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 const OurOffer = () => {
   return (
@@ -24,12 +25,13 @@ const OurOffer = () => {
                     Discover a delightful collection of artisanal treats and handcrafted merchandise designed to elevate every moment. From mouth-watering baked goods to stylish, functional keepsakes — we bring quality, creativity, and care in every product.
                 </p>
                 <div className="mt-4">
-                    <a
-                    href="#shop"
+                    <Link to='/product/confectionaries'>
+                    <button
                     className="px-6 py-3 bg-primary-light text-white font-semibold rounded-full hover:bg-primary-dark transition"
                     >
                     Explore Our Products
-                    </a>
+                    </button>
+                    </Link>
                 </div>
             </div>
         </div>

@@ -14,7 +14,7 @@ import { useCart } from '@/context/CartContext';
 const Trending = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { addingToCart } = useCart();
+  const { addToCart } = useCart();
   
 
   const handleViewMore = (product) => {
@@ -27,12 +27,12 @@ const Trending = () => {
     setSelectedProduct(null);
   };
 
-  const addToCart = () => {
+  const addToCartHandler = () => {
     if (!selectedProduct) return;
   
-    addingToCart({
+    addToCart({
       ...selectedProduct,
-      id: selectedProduct.title.replace(/\s+/g, '-').toLowerCase() + '-' + Math.random().toString(36).substring(7), // Generate a quick unique ID
+      id: selectedProduct.title.replace(/\s+/g, '-').toLowerCase() + '-' + Math.random().toString(36).substring(7),
     });
   
     toast.success(`${selectedProduct.title} added to cart! 🛒`, {
@@ -208,7 +208,7 @@ const Trending = () => {
         isOpen={isModalOpen}
         onClose={closeModal}
         product={selectedProduct}
-        onAddToCart={addToCart}
+        onAddToCart={addToCartHandler}
       />
     </section>
   );

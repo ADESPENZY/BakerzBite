@@ -9,6 +9,7 @@ import ToastContainer from './Component/ToastContainer'
 import Contact from './Pages/Contact'
 import { CartProvider } from './context/CartContext'
 import CartPage from './Pages/CartPage'
+import FAQ from './Pages/Faq'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
               <Route path='/product/confectionaries' element={<Confectionaries />} />
               <Route path='/product/merchandise' element={<Merchandize />} />
               <Route path='/cart' element={<CartPage />} />
+              <Route path='/faq' element={<FAQ />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>

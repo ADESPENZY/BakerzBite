@@ -10,17 +10,20 @@ const Cta = () => {
           Treat Yourself to Our Irresistible Cookies & Cakes
         </h1>
         <div className='flex flex-col md:flex-row gap-5 md:items-center'>
-          <Link to='/custom-order'>
+          <Link to='/product/confectionaries'>
             <button className='bg-primary-light text-xl w-full md:w-fit font-medium px-5 py-3 rounded hover:bg-primary-dark'>
               Explore Our Menu
             </button>
           </Link>
-          <Link
-            to="/custom-order"
-            className="border border-primary-light w-full text-center md:text-start md:w-fit text-xl font-medium px-5 py-3 rounded hover:bg-primary-dark"
+          <a
+              href="https://calendly.com/atoyebijoshua095?hide_gdpr_banner=1"
+              className="border border-primary-light w-full text-center md:text-start md:w-fit text-xl font-medium px-5 py-3 rounded hover:bg-primary-dark"
+              target="_blank"
+              rel="noopener noreferrer"
           >
-            Place a Custom Order
-          </Link>
+              Book A Tasting
+          </a>
+          
         </div>
       </div>
     </section>
